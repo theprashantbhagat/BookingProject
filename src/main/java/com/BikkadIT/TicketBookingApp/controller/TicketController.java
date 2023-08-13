@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.GetMapping;
 import com.BikkadIT.TicketBookingApp.RequestBinding.Passenger;
 import com.BikkadIT.TicketBookingApp.ResponseBinding.Ticket;
 import com.BikkadIT.TicketBookingApp.ticketService.TicketServiceI;
@@ -26,4 +26,14 @@ public class TicketController {
 		
 		
 	}
+	@GetMapping(value = "/test",consumes = {"application/xml","application/json"},
+			produces = {"application/xml","application/json"})
+	public ResponseEntity<String> bookTicket( ){
+		
+		
+		return new ResponseEntity<String>("this is bikkad it",HttpStatus.OK);
+		
+		
+	}
+	
 }
